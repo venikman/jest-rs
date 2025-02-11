@@ -15,8 +15,12 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src", "**/*.test.ts", "**/*.test.tsx", "jest.config.js"],
+  "include": ["src", "tests"],
   "references": [{ "path": "./tsconfig.node.json" }]
 } 
