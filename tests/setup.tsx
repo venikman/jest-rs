@@ -4,6 +4,15 @@ import { ThemeProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/material';
 import { render, RenderOptions } from '@testing-library/react';
 
+// Suppress console errors during tests
+beforeAll(() => {
+  jest.spyOn(console, 'error').mockImplementation(() => {});
+});
+
+afterAll(() => {
+  jest.restoreAllMocks();
+});
+
 const theme = createTheme();
 
 interface CustomRenderOptions extends Omit<RenderOptions, 'wrapper'> {
