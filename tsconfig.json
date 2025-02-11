@@ -19,8 +19,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "include": ["src", "tests"],
+  "include": ["src", "tests", "src/types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 } 

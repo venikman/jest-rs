@@ -3,9 +3,10 @@ import type { Config } from 'jest';
 const config: Config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.tsx'],
   moduleNameMapper: {
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+    '\\.(css|scss)$': 'identity-obj-proxy',
+    '\\.module\\.(css|scss)$': 'identity-obj-proxy',
     '^@/(.*)$': '<rootDir>/src/$1'
   },
   transform: {
@@ -16,7 +17,10 @@ const config: Config = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testMatch: [
     '<rootDir>/tests/**/*.test.{ts,tsx}'
-  ]
+  ],
+  testEnvironmentOptions: {
+    customExportConditions: ['']
+  }
 };
 
 export default config; 
