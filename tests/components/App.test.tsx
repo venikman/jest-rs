@@ -10,7 +10,6 @@ describe('App', () => {
     expect(screen.getByText('Start editing src/App.tsx to see changes')).toBeInTheDocument();
     
     // Test buttons
-    expect(screen.getByRole('button', { name: 'SCSS Button' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'MUI Button' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Tailwind Button' })).toBeInTheDocument();
     

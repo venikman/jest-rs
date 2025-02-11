@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, TextField } from '@mui/material';
-import styles from './styles/button.module.scss';
-import './styles/global.scss';
+import './styles/global.css';
 
 const App: React.FC = () => {
   return (
@@ -10,9 +9,6 @@ const App: React.FC = () => {
       <p className="mb-4">Start editing src/App.tsx to see changes</p>
       
       <div className="space-y-4">
-        {/* Custom SCSS Button */}
-        <button className={styles.button}>SCSS Button</button>
-        
         {/* MUI Components */}
         <div className="space-x-2">
           <Button variant="contained" color="primary">

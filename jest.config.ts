@@ -5,8 +5,7 @@ const config: Config = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/tests/setup.tsx'],
   moduleNameMapper: {
-    '\\.(css|scss)$': 'identity-obj-proxy',
-    '\\.module\\.(css|scss)$': 'identity-obj-proxy',
+    '\\.css$': 'identity-obj-proxy',
     '^@/(.*)$': '<rootDir>/src/$1'
   },
   transform: {
