@@ -6,49 +6,45 @@ const Demo: React.FC = () => {
   const [starCount, setStarCount] = useState(0);
   const [inputValue, setInputValue] = useState('');
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
   };
 
   return (
     <div className="space-y-4">
       <h1 className="text-2xl font-bold">Demo Page</h1>
-      
+
       <div className="space-y-4">
         {/* MUI Components */}
-        <div className="space-x-2">
-          <Button 
-            variant="contained" 
-            color="primary"
-            type="button"
-          >
-            MUI Button
-          </Button>
-          <TextField 
-            label="MUI Input" 
-            variant="outlined" 
-            size="small"
+        <div className="space-y-2">
+          <Button variant="contained">MUI Button</Button>
+          <TextField
+            label="MUI Input"
             value={inputValue}
             onChange={handleInputChange}
+            fullWidth
+            inputProps={{
+              'aria-label': 'MUI Input'
+            }}
           />
         </div>
-        
+
+        {/* Tailwind Components */}
+        <div className="space-y-2">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Tailwind Button
+          </button>
+        </div>
+
         {/* Star Button with Counter */}
         <button 
           onClick={() => setStarCount(prev => prev + 1)}
           className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
           type="button"
+          aria-label={`Stars: ${starCount}`}
         >
-          <StarIcon className="w-5 h-5" />
+          <StarIcon />
           <span>Stars: {starCount}</span>
-        </button>
-
-        {/* Tailwind Styled Button */}
-        <button 
-          type="button"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Tailwind Button
         </button>
       </div>
     </div>

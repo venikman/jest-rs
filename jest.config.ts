@@ -5,22 +5,17 @@ const config: Config = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
   moduleNameMapper: {
-    '\\.css$': 'identity-obj-proxy',
-    '\\.svg$': '<rootDir>/tests/mocks/svgMock.tsx',
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
   transform: {
-    '^.+\\.(ts|tsx)$': ['ts-jest', {
-      tsconfig: 'tsconfig.json'
-    }],
+    '^.+\\.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.json' }],
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  testMatch: [
-    '<rootDir>/tests/**/*.test.{ts,tsx}'
-  ],
+  moduleDirectories: ['node_modules', '<rootDir>'],
   testEnvironmentOptions: {
     customExportConditions: ['']
-  }
+  },
+  setupFiles: ['<rootDir>/tests/jest.env.ts']
 };
 
 export default config; 
