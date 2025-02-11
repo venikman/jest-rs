@@ -1,4 +1,4 @@
-import { render, screen } from '../setup';
+import { render, screen, fireEvent } from '../setup';
 import App from '@/App';
 
 describe('App', () => {
@@ -15,5 +15,18 @@ describe('App', () => {
     
     // Test MUI TextField
     expect(screen.getByLabelText('MUI Input')).toBeInTheDocument();
+  });
+
+  it('increments star count when clicking star button', () => {
+    render(<App />);
+    
+    const starButton = screen.getByRole('button', { name: /stars: 0/i });
+    expect(starButton).toBeInTheDocument();
+    
+    fireEvent.click(starButton);
+    expect(screen.getByText('Stars: 1')).toBeInTheDocument();
+    
+    fireEvent.click(starButton);
+    expect(screen.getByText('Stars: 2')).toBeInTheDocument();
   });
 }); 
