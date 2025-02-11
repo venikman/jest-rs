@@ -8,7 +8,7 @@ jest.mock('@mui/material', () => ({
       mode: 'light',
       primary: {
         main: '#1976d2',
-      },
-    },
+      }
+    }
   }),
 })); 
