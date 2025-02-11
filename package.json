@@ -34,6 +34,9 @@
     "@mui/material": "^5.15.10",
     "@mui/types": "^7.2.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@react-router/node": "*",
+    "@react-router/serve": "*",
+    "react-router": "*"
   }
 }
